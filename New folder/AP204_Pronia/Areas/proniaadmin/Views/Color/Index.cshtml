@@ -1,0 +1,58 @@
+﻿@model List<Color>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="table-responsive pt-3">
+    <a asp-controller="Color" asp-action="Create" class="btn btn-success">Create size</a>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    settings
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Color color in Model)
+            {
+                <tr>
+                    <td>
+                        @color.Id
+                    </td>
+                    <td>
+                        @color.Name
+                    </td>
+                    <td>
+                        <div class="d-flex">
+                            <div class="detail">
+                                <a asp-controller="Color" asp-action="Detail" asp-route-Id="@color.Id" class="btn btn-primary">
+                                    <i class="mdi mdi-details"></i>
+                                </a>
+                            </div>
+                            <div class="update">
+                                <a asp-controller="Color" asp-action="Edit" asp-route-Id="@color.Id" class="btn btn-warning">
+                                    <i class="mdi mdi-arrow-up-bold-circle"></i>
+                                </a>
+                            </div>
+                            <div class="delate">
+                                <a asp-controller="Color" asp-action="Delete" asp-route-Id="@color.Id" class="btn btn-danger">
+                                    <i class="mdi mdi-delete-forever"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

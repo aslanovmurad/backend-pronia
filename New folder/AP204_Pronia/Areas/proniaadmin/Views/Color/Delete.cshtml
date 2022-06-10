@@ -1,0 +1,24 @@
+﻿@model Color
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+   <div>
+       <h4>Id</h4>
+       <p>
+           @Model.Id
+       </p>
+   </div>
+   <div>
+        <h4>Name</h4>
+       <p>
+           @Model.Name
+       </p>
+   </div>
+   <form method="post" class="mt-4">
+    <button  type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+</div>
+

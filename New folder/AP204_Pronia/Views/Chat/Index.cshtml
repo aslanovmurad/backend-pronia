@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="chatsection col-lg-5">
+                <form id="chat">
+                    <input type="text" id="name" placeholder="Username" class="form-control" /><br />
+                    <input type="text" id="message" placeholder="Message" class="form-control" /><br />
+                    <button type="submit" class="btn btn-outline-success" id="send">Send Message</button>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <ul style="unstyle-list;">
+                    @foreach (AppUser item in Model.appUsers)
+                    {
+                        <li>
+                            @item.UserName
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section scripts{
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder().withUrl("/chathub").build()
+        connection.start()
+
+        let sendbtn = document.getElementById("send")
+
+        sendbtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            let username = document.getElementById("name").value
+            let message = document.getElementById("message").value
+            connection.invoke("SendMessage", username, message);
+        })
+        connection.on("ReceiveMessage", function(name, message) {
+            let div = document.createElement("div");
+            div.className = "mt-3"
+            let h4 = document.createElement("h4");
+            h4.innerText = name;
+            let p = document.createElement("p");
+            p.innerText = message
+
+            div.append(h4, p)
+            document.querySelector(".chatsection").appendChild(div)
+        })
+    </script>
+
+}

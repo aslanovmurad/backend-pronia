@@ -1,0 +1,52 @@
+﻿@model Plant
+@{
+    ViewData["Title"] = "Ditail";
+}
+
+<table class="table table-dark" style="height:150px;">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                SKUCode
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Guarantee
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.Id
+            </td>
+            <td>
+                @Model.SKUCode
+            </td>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.Price
+            </td>
+            <td>
+                @Model.Color
+            </td>
+            <td>
+                @Model.Guarantee
+            </td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,75 @@
+﻿@model Plant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div> 
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label class="mb-3">Plant Name:</label><br />
+        <input asp-for="Name" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label class="mb-3">Plant Price:</label><br />
+        <input asp-for="Price" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <label class="mb-3">Plant Description:</label><br />
+        <input asp-for="Description" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label class="mb-3">Plant SKUCode:</label><br />
+        <input asp-for="SKUCode" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="SKUCode"></span>
+    </div>
+      <div>
+        <label class="mb-3">Plant Colors:</label><br />
+        <select asp-for="ColorId" asp-items="@(new SelectList( ViewBag.Colors,"Id","Name"))"></select>
+        <span class="text-danger" asp-validation-for="ColorId"></span>
+    </div>
+      <div>
+        <label class="mb-3">Plant Size:</label><br />
+        <select asp-for="SizeId" asp-items="@(new SelectList( ViewBag.Sizes,"Id","Name"))"></select>
+        <span class="text-danger" asp-validation-for="SizeId"></span>
+    </div>
+     <div>
+        <label class="mb-3">Plant Catagories:</label><br />
+        <select asp-for="CatagoriesIds" asp-items="@(new SelectList( ViewBag.Catagory,"Id","Name"))"></select>
+        <span class="text-danger" asp-validation-for="CatagoriesIds"></span>
+    </div>
+    <div>
+        <label class="mb-3">Plant Shipping:</label><br />
+        <input asp-for="Shipping" class="form-control" accept="image/*"/><br />
+        <span class="text-danger" asp-validation-for="Shipping"></span>
+    </div>
+ 
+    <div>
+        <label class="mb-3">Plant Request:</label><br />
+        <input asp-for="Request" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="Request"></span>
+    </div>
+     <div>
+        <label class="mb-3">Plant Guarantee:</label><br />
+        <input asp-for="Guarantee" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="Guarantee"></span>
+    </div>
+       <div>
+        <label class="mb-3">Plant MainImage:</label><br />
+        <input asp-for="MainImage" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="MainImage"></span>
+    </div>
+       <div>
+        <label class="mb-3">Plant AnotherImage:</label><br />
+        <input asp-for="AnotherImage" class="form-control"/><br />
+        <span class="text-danger" asp-validation-for="AnotherImage"></span>
+    </div>
+
+<div class="mt-3">
+        <button type="submit" class="btn btn-primary">Create Plant</button>
+    </div>
+</form>
+

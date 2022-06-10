@@ -1,0 +1,56 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<table class="table table-dark" style="height:150px;">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Subtitile
+            </th>
+            <th>
+                Discount
+            </th>
+            <th>
+                Discoverurl
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.Id
+            </td>
+            <td>
+                <img src="~/assets/images/website-images/@Model.Image" alt="Inner Image" style="width:100px;height:90px" />
+
+            </td>
+            <td>
+                @Model.Title
+            </td>
+            <td>
+                @Model.Subtitle
+            </td>
+            <td>
+                @Model.Discount
+            </td>
+            <td>
+                @Model.DiscoverUrl
+            </td>
+        </tr>
+    </tbody>
+    <form method="post" class="mt-4">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</table>
+

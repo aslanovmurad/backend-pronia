@@ -1,0 +1,94 @@
+﻿@model Slider
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@*<div>
+   <div>
+       <h4>Id</h4>
+       <p>
+           @Model.Id
+       </p>
+   </div>
+   <div>
+       <h4>Image</h4>
+       <img src="~/assets/images/website-images/@Model.Image" alt="Inner Image" />
+                                                    
+   </div>
+   <div>
+        <h4>Title</h4>
+       <p>
+           @Model.Title
+       </p>
+       
+   </div>
+   <div>
+        <h4>Title</h4>
+       <p>
+           @Model.Subtitle
+       </p>
+   </div>
+   <div>
+        <h4>Title</h4>
+       <p>
+           @Model.Discount
+       </p>
+   </div>
+   <div>
+        <h4>Title</h4>
+       <p>
+           @Model.DiscoverUrl
+       </p>
+   </div>
+</div>*@
+
+ <table class="table table-dark" style="height:150px;">
+                      <thead>
+                        <tr>
+                          <th>
+                            Id
+                          </th>
+                          <th>
+                              Image
+                          </th>
+                          <th>
+                              Title
+                          </th>
+                          <th>
+                              Subtitile
+                          </th>
+                          <th>
+                              Discount
+                          </th>
+                          <th>
+                              Discoverurl
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                           <tr>
+                               <td>
+                                   @Model.Id
+                               </td>
+                               <td>
+                                 <img src="~/assets/images/website-images/@Model.Image" alt="Inner Image" style="width:100px;height:90px" />
+                                   
+                               </td>
+                               <td>
+                                   @Model.Title
+                               </td>
+                                  <td>
+                                   @Model.Subtitle
+                               </td>
+                                  <td>
+                                   @Model.Discount
+                               </td>
+                                  <td>
+                                   @Model.DiscoverUrl
+                               </td>
+                           </tr>
+                      </tbody>
+                    </table>
+
+
